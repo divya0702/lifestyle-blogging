@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/divya0702/lifestyle-blogging/static/css/main.d5289b2f.css",
+    "main.js": "/divya0702/lifestyle-blogging/static/js/main.45e6e86d.js",
+    "index.html": "/divya0702/lifestyle-blogging/index.html",
+    "main.d5289b2f.css.map": "/divya0702/lifestyle-blogging/static/css/main.d5289b2f.css.map",
+    "main.45e6e86d.js.map": "/divya0702/lifestyle-blogging/static/js/main.45e6e86d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5289b2f.css",
+    "static/js/main.45e6e86d.js"
+  ]
+}

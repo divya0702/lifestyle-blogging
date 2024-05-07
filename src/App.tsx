@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} /> {/* Use HomePage as the main home page */}
+        <Route path="/" element={<HomePage />} /> {/* Use HomePage the main home page */}
         <Route path="/technology" element={<PostList category="technology" />} />
         <Route path="/travel" element={<PostList category="travel" />} />
         <Route path="/food" element={<PostList category="food" />} />

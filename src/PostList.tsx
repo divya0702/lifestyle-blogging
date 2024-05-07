@@ -80,19 +80,6 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
           ))}
         </Grid>
       </div>
-      <style>
-        {`
-        .backbutton{
-          text-decoration: 'none', 
-          color: '#ac3b61'
-        }
-          @media screen and (min-width: 400px) and (max-width: 1060px) {
-            .backButton {
-              margin-right: 0 !important; /* Add !important to ensure overriding */
-            }
-          }
-        `}
-      </style>
     </div>
   );
 };

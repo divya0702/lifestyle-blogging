@@ -70,6 +70,7 @@ const IndividualPost: React.FC = () => {
             img {
               max-width: 315px;
               height: auto;
+              padding-left: 4rem;
             }
             h2, p {
               margin: 2rem;

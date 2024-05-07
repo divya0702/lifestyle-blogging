@@ -52,7 +52,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage":"https://github.com/divya0702/lifestyle-blogging",
+  "homepage":"https://divya0702.github.io/lifestyle-blogging",
   "devDependencies": {
     "@types/react-slick": "^0.23.13",
     "gh-pages": "^6.1.1"

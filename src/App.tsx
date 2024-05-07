@@ -1,26 +1,34 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './Header';
+import PostList from './PostList';
+import IndividualPost from './IndividualPost';
+import HomePage from './HomePage'; // Import the HomePage component
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Footer';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{backgroundColor: '#EEE2DC'}}>
+    <div style={{fontFamily:'Dancing Script, cursive', marginBlock:'0 4rem', color:'#123c69'}}>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} /> {/* Use HomePage as the main home page */}
+        <Route path="/technology" element={<PostList category="technology" />} />
+        <Route path="/travel" element={<PostList category="travel" />} />
+        <Route path="/food" element={<PostList category="food" />} />
+        <Route path="/post/:id" element={<IndividualPost />} />
+      </Routes>
+      <Footer/>
+    </Router>
     </div>
+    </div>
+    </>
   );
-}
+};
 
 export default App;

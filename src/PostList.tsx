@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Typography, Card, CardContent, CardActionArea, CardMedia } from '@mui/material';
+import { Grid, Typography, Card, CardContent, CardActionArea, CardMedia, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { PostData, technologyPosts, travelPosts, foodPosts } from './PostData';
 import NavigationBar from './NavigationBar';
@@ -38,13 +38,13 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
   const capitalizedCategory = category ? category.charAt(0).toUpperCase() + category.slice(1) : '';
 
   return (
-    <div style={{ backgroundImage: `url(${categoryBackgrounds[category || '']})`, backgroundSize: 'cover', minHeight: '100vh' }}>
-      <div style={{ padding: '2rem' }}>
-        <div style={{ display: 'flex' }}>
-          <Link to="/" style={{ textDecoration: 'none', color: '#123c69', margin: 0, marginRight: '28rem' }}>
-            <ArrowBackIcon fontSize="large" />
-          </Link>
-          <div style={{ marginBottom: '1rem', textAlign: 'center' }}>
+    <div style={{ backgroundImage: `url(${categoryBackgrounds[category || '']})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ padding: '2rem', width: '100%' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <IconButton component={Link} to="/" aria-label="back">
+        <ArrowBackIcon />
+      </IconButton>
+          <div style={{ marginBottom: '1rem', textAlign: 'center', flex: '1' }}> {/* Adjusted styles */}
             <NavigationBar />
           </div>
         </div>
@@ -63,7 +63,7 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
                   <CardMedia
                     component="img"
                     height="140"
-                    image={`/images/${category}/${post.id}.jpg`}
+                    image={post.imageUrl} // Use the imageUrl property from the PostData object
                     alt={post.title}
                   />
                   <CardContent style={{ backgroundColor: '#BAB2B5' }}>
@@ -80,6 +80,19 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
           ))}
         </Grid>
       </div>
+      <style>
+        {`
+        .backbutton{
+          text-decoration: 'none', 
+          color: '#ac3b61'
+        }
+          @media screen and (min-width: 400px) and (max-width: 1060px) {
+            .backButton {
+              margin-right: 0 !important; /* Add !important to ensure overriding */
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
   return (
     <div style={{ backgroundImage: `url(${categoryBackgrounds[category || '']})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ padding: '2rem', width: '100%' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
         <IconButton component={Link} to="/" aria-label="back">
         <ArrowBackIcon />
       </IconButton>
@@ -60,12 +60,12 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
             <Grid key={post.id} item xs={12} sm={6} md={4}>
               <Card>
                 <CardActionArea component={Link} to={`/post/${post.id}`}>
-                  <CardMedia
+                  {post?.imageUrl && <CardMedia
                     component="img"
                     height="140"
                     image={post.imageUrl} // Use the imageUrl property from the PostData object
                     alt={post.title}
-                  />
+                  /> }
                   <CardContent style={{ backgroundColor: '#BAB2B5' }}>
                     <Typography gutterBottom variant="h5" component="div" style={{ textDecoration: 'none', color: '#123c69', fontFamily: 'Dancing Script, cursive', fontSize: '2rem' }}>
                       {post.title}

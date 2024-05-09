@@ -6,13 +6,14 @@ import IndividualPost from './IndividualPost';
 import HomePage from './HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer';
+import theme from './theme';
 
 const App: React.FC = () => {
   return (
-    <div style={{fontFamily: 'Dancing Script, cursive', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div className="app-container">
       <Router basename="/lifestyle-blogging">
         <Header />
-        <div style={{ flex: 1, backgroundColor: '#EEE2DC', padding: '0.5rem 4rem 2rem 4rem', color: '#123c69' }}>
+        <div className='app-css'>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/technology" element={<PostList category="technology" />} />
@@ -23,6 +24,29 @@ const App: React.FC = () => {
         </div>
         <Footer />
       </Router>
+      <style>
+        {`
+          .app-container {
+            font-family: ${theme.primaryFont};
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+
+          .app-css {
+            flex: 1;
+            background-color: ${theme.secondaryColor};
+            padding: 0.5rem 4rem 2rem;
+            color: ${theme.primaryColor};
+          }
+
+          @media screen and (min-width: 400px) and (max-width: 790px) {
+            .app-css {
+              padding: 0.5rem 1.5rem 2rem;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

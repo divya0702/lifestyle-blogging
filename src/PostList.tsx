@@ -4,6 +4,7 @@ import { Grid, Typography, Card, CardContent, CardActionArea, CardMedia, IconBut
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { PostData, technologyPosts, travelPosts, foodPosts } from './PostData';
 import NavigationBar from './NavigationBar';
+import theme from './theme';
 
 interface PostListProps {
   category?: string; // Define the category prop
@@ -50,7 +51,7 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
         </div>
 
         {category && (
-          <Typography variant="h4" align="center" gutterBottom style={{ margin: '1.5rem', color: '#ac3b61', fontFamily: 'inherit' }}>
+          <Typography variant="h4" align="center" gutterBottom style={{ margin: '1.5rem', color: theme.tertiaryColor, fontFamily: 'inherit' }}>
             {capitalizedCategory + ` blog` }
           </Typography>
         )}
@@ -67,10 +68,10 @@ const PostList: React.FC<PostListProps> = ({ category }) => {
                     alt={post.title}
                   /> }
                   <CardContent style={{ backgroundColor: '#BAB2B5' }}>
-                    <Typography gutterBottom variant="h5" component="div" style={{ textDecoration: 'none', color: '#123c69', fontFamily: 'Dancing Script, cursive', fontSize: '2rem' }}>
+                    <Typography gutterBottom variant="h5" component="div" style={{ textDecoration: 'none', color: theme.primaryColor, fontFamily: theme.primaryFont, fontSize: '2rem' }}>
                       {post.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" style={{ textDecoration: 'none', color: '#123c69', fontFamily: 'Dancing Script, cursive', fontSize: '1.25rem' }}>
+                    <Typography variant="body2" color="textSecondary" style={{ textDecoration: 'none', color: theme.primaryColor, fontFamily: theme.primaryFont, fontSize: '1.25rem' }}>
                       {post.content.split(' ').slice(0, 20).join(' ') + "  ..."}
                     </Typography>
                   </CardContent>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { PostData, technologyPosts, travelPosts, foodPosts } from './PostData';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import theme from './theme';
 
 const IndividualPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -43,7 +44,7 @@ const IndividualPost: React.FC = () => {
       {post && (
         <>
           <div style={{ maxWidth: 850, margin: '0 auto' }}> 
-            <h2 style={{ color: '#ac3b61', margin: '1rem', fontSize:'2.5rem' }}>{post.title}</h2>
+            <h2 style={{ color: theme.tertiaryColor, margin: '1rem', fontSize:'2.5rem' }}>{post.title}</h2>
             <div style={{ maxWidth: 600, margin: '0 auto' }}> {/* Adjust the max width to your desired size */}
               {/* Render the image */}
               {post?.imageUrl && <img src={post.imageUrl} alt={post.title} style={{ width: '100%' }} />}
@@ -59,9 +60,8 @@ const IndividualPost: React.FC = () => {
             img {
               max-width: 315px;
               height: auto;
-              padding-left: 4rem;
             }
-            h2, p {
+            h2 {
               margin: 2rem;
             }
           }

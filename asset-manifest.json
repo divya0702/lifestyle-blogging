@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lifestyle-blogging/static/css/main.d5289b2f.css",
-    "main.js": "/lifestyle-blogging/static/js/main.8ee3f87e.js",
+    "main.js": "/lifestyle-blogging/static/js/main.a3828951.js",
     "index.html": "/lifestyle-blogging/index.html",
     "main.d5289b2f.css.map": "/lifestyle-blogging/static/css/main.d5289b2f.css.map",
-    "main.8ee3f87e.js.map": "/lifestyle-blogging/static/js/main.8ee3f87e.js.map"
+    "main.a3828951.js.map": "/lifestyle-blogging/static/js/main.a3828951.js.map"
   },
   "entrypoints": [
     "static/css/main.d5289b2f.css",
-    "static/js/main.8ee3f87e.js"
+    "static/js/main.a3828951.js"
   ]
 }
